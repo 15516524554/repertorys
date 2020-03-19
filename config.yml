@@ -1,11 +1,14 @@
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
 spring:
+  profiles:
+    active:
+      - dev
+---
+spring:
+  profiles: dev
   application:
-    name: config
-env:
- test
-enable:
- name: master
+    name: microservicecloud-config-dev
+---
+spring:
+  profiles: test
+  application:
+    name: microservicecloud-config-test
